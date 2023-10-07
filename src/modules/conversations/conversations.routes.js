@@ -5,7 +5,7 @@ const {
   getAllConversations,
 } = require("./conversations.controllers");
 const authenticate = require("../../middlewares/auth.middleware");
-
+const { conversationValidator } = require("./conversations.validators");
 const router = Router();
 
 // crear conversaciones
@@ -14,9 +14,9 @@ const router = Router();
 // obtener una conversación con todos los mensajes
 
 // * RUTA PROTEGIDAS a traves de authenticate
-router.post("/", authenticate, createConversation);
-router.post("/group", authenticate, createGroupConversation);
+router.post("/", authenticate, conversationValidator, createConversation);
+router.post("/group", authenticate, conversationValidator, createGroupConversation);
 
-router.get("/:id", getAllConversations);
+router.get("/:id", authenticate, getAllConversations);
 
 module.exports = router;

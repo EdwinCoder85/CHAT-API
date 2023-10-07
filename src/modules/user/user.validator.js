@@ -72,4 +72,3 @@ module.exports = {
   registerUserValidator,
   loginValidator,
 };
-// * construir una expresión regular para nombres ?

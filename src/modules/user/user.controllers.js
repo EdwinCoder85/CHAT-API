@@ -22,10 +22,11 @@ const registerUser = async (req, res, next) => {
     // {firstname, lastname, email, password}
     // vamos a realizar una consulta a la base de datos innecesaria
     // validar los datos
-    await User.create(newUser);
+    const look = await User.create(newUser);
     res.status(201).end();
     // enviar un correo al usuario
   } catch (error) {
+    console.log(error)
     next(error);
   }
 };
@@ -38,7 +39,7 @@ const loginUser = async (req, res, next) => {
     if (!user) {
       throw {
         status: 400,
-        error: "User does not exist mid",
+        error: "User does not exist",
         message: "You need register before login",
       };
     }

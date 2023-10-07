@@ -1,5 +1,4 @@
 const { Router } = require("express");
-const { User, Participant } = require("../../models");
 const {
   registerUser,
   loginUser,
@@ -14,20 +13,8 @@ const router = Router();
 
 router
   .route("/")
-  .get(getAllUsers)
-  .post(registerUserValidator, registerUser)
-  .get(async (req, res, next) => {
-    try {
-      const result = User.findAll({
-        include: {
-          model: Participant,
-        },
-      });
-      res.json(result);
-    } catch (error) {
-      next(error);
-    }
-  });
+  .get(authenticate, getAllUsers)
+  .post(registerUserValidator, registerUser);
 
 router.put("/:id", authenticate, upload.single("avatar"), uploadAvatar);
 

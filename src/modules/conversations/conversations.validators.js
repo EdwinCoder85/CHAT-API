@@ -20,3 +20,7 @@ const conversationValidator = [
     .withMessage("The type value must be string"),
     validateResult,
 ];
+
+module.exports = {
+  conversationValidator
+}

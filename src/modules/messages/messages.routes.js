@@ -3,6 +3,7 @@ const {
   createConversationMessage,
   getConversationMessages,
 } = require("./messages.controllers");
+const { messageValidator } = require("./messages.validators");
 const authenticate = require("../../middlewares/auth.middleware");
 
 const router = Router();
@@ -10,7 +11,7 @@ const router = Router();
 // * se va crear un mensaje de la conversacion
 router
   .route("/conversation/:id")
-  .post(authenticate, createConversationMessage)
-  .get(authenticate, getConversationMessages);
+  .post(authenticate, messageValidator, createConversationMessage)
+  .get(authenticate, messageValidator, getConversationMessages);
 
 module.exports = router;

@@ -5,10 +5,6 @@ const morgan = require("morgan");
 const cors = require("cors");
 const apiv1Routes = require("./routes/apiv1.routes");
 const errorRoutes = require("./routes/error.routes");
-// const getImages = require("./helpers/getImages");
-require("dotenv").config();
-
-const PORT = process.env.PORT ?? 8000;
 
 const app = express();
 
@@ -27,6 +23,4 @@ errorRoutes(app);
 
 // los middlewares de error los ubicamos despues de todas nuestras rutas
 
-app.listen(PORT, () => {
-  console.log(`Servidor escuchando en el puerto ${PORT}`);
-});
+module.exports = app;

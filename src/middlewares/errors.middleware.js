@@ -6,34 +6,45 @@ const {
   ValidationError,
   DatabaseError,
 } = require("sequelize");
+const dayjs = require("dayjs");
 
 // necesitamos un middleware para mostrar errores en la consola (log errors)
 
-// middleware para logear
+const getError = (req, err, res) => {
+  const { body, url, method } = req;
+  console.log(body);
+  const formatBody = body ? JSON.stringify(body) : null;
+  const { status, ...error } = err;
+  return (
+    `req: ${method} ${url} body: ${formatBody} \nres: status: ${status}, ${JSON.stringify(
+      error
+    )} ` + "\n\n"
+  );
+};
+
 const errorLogger = (err, req, res, next) => {
   const date = new Date().toLocaleString();
   const current = dayjs().format("YYYY-MM-DD");
-  console.log(err); // * mostrar la fecha y hora en la que sucedio el error
+  console.log(err); // mostrar la fecha y hora en la que sucedio el error
   const filePath = path.join(__dirname, `../logs/${current}-logs.txt`);
   fs.appendFile(
     filePath,
-    `=========================ERROR ${date}===========================\n`
+    `====================ERROR ${date}=========================\n`
   );
-  fs.appendFile(filePath, JSON.stringify(err) + "\n\n");
+  fs.appendFile(filePath, getError(req, err, res));
   next(err);
 };
 
 const ormErrorHandler = (err, req, res, next) => {
-  // * aquí llega un error lanzado en un controlador
-  // * verificamos si este error fue creado con la clase Connection error
+  // aqui llega un error lanzado en un controlador
+  // verificamos si este error fue creado con la clase Connection error
   if (err instanceof ConnectionError) {
     return res.status(409).json({
       error: "database connection error",
       message: err.name,
     });
   }
-
-  // * verificamos si el error fue creado con la clase ValidationError
+  // verificamos si el error fue creado con la lase ValidationError
   if (err instanceof ValidationError) {
     return res.status(400).json({
       error: err.name,
@@ -82,9 +93,9 @@ const notFoundErrorHandler = (req, res) => {
 module.exports = {
   errorLogger,
   ormErrorHandler,
+  jwtErrorHandler,
   errorHandler,
   notFoundErrorHandler,
-  jwtErrorHandler
 };
 
-// ! TODO tarea -> escribir un manejador de errores para jsonwebtoken
+// TODO tarea -> escribir un manejador de erroes  para jsonwebtoken
