@@ -442,3 +442,31 @@ res: status: 400, {"error":"Invalid data","message":["The lastname property is n
 req: POST /api/v1/users body: {"firstname":"shalala","lastname":"","email":"shalalala@gmail.com","password":"Shalala123@"} 
 res: status: 400, {"error":"Invalid data","message":["The lastname must not be empty","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
 
+====================ERROR 7/10/2023, 22:56:14=========================
+req: GET /api/v1/messages/conversation/29 body: {} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 23:24:06=========================
+req: GET /api/v1/users body: {} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 23:25:49=========================
+req: POST /api/v1/users body: {"firstname":"","lastname":"Villegas","email":"nelidavillegas@gmail.com","password":"Academlo123@"} 
+res: status: 400, {"error":"Invalid data","message":["The firstname must not be empty","The length of the name must be between 2 and 50 characters","firstname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 23:26:17=========================
+req: GET /api/v1/users body: {} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 23:30:28=========================
+req: POST /api/v1/users body: {"firstname":"Nelida","lastname":"Villegas","email":"nelidavillegas@gmail.com","password":"Academlo123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":218,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(nelidavillegas@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["Nelida","Villegas","nelidavillegas@gmail.com","$2b$10$izJ3KhsRn1HbCIJ62VRGPenSQK8hDgDSLMopSvI9sk2FTow8Dt8Tu","2023-10-08 04:30:28.614 +00:00","2023-10-08 04:30:28.614 +00:00"]},"original":{"length":218,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(nelidavillegas@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["Nelida","Villegas","nelidavillegas@gmail.com","$2b$10$izJ3KhsRn1HbCIJ62VRGPenSQK8hDgDSLMopSvI9sk2FTow8Dt8Tu","2023-10-08 04:30:28.614 +00:00","2023-10-08 04:30:28.614 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 23:42:00=========================
+req: POST /api/v1/users body: {"firstname":"Lourdes","lastname":"Nano","email":"lourdesnano@gmail.com","password":"Academlo123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":215,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(lourdesnano@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["Lourdes","Nano","lourdesnano@gmail.com","$2b$10$gun9CkX7UmUI1ymGyzqkjOcKja.bsF9AnDt61ay92HCEqF7Pi5/2u","2023-10-08 04:42:00.056 +00:00","2023-10-08 04:42:00.056 +00:00"]},"original":{"length":215,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(lourdesnano@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["Lourdes","Nano","lourdesnano@gmail.com","$2b$10$gun9CkX7UmUI1ymGyzqkjOcKja.bsF9AnDt61ay92HCEqF7Pi5/2u","2023-10-08 04:42:00.056 +00:00","2023-10-08 04:42:00.056 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 23:44:12=========================
+req: GET /api/v1/users body: {} 
+res: status: 401, {"message":"No authorization header"} 
+

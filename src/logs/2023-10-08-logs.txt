@@ -1,0 +1,4 @@
+====================ERROR 8/10/2023, 00:01:45=========================
+req: GET /api/v1/users body: {} 
+res: status: 401, {"message":"No authorization header"} 
+

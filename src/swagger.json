@@ -5,14 +5,8 @@
     "description": "...",
     "version": "1.0"
   },
-  "servers": [
-    {
-      "url": "http://localhost:8000/api/v1",
-      "variables": {}
-    }
-  ],
   "paths": {
-    "/users": {
+    "/api/v1/users": {
       "post": {
         "tags": [
           "users"
@@ -55,8 +49,7 @@
             "headers": {}
           }
         },
-        "deprecated": false,
-        "security": []
+        "deprecated": false
       },
       "get": {
         "tags": [
@@ -79,7 +72,7 @@
         ]
       }
     },
-    "/users/login": {
+    "/api/v1/users/login": {
       "post": {
         "tags": [
           "users"
@@ -118,15 +111,10 @@
             "headers": {}
           }
         },
-        "deprecated": false,
-        "security": [
-          {
-            "bearer": []
-          }
-        ]
+        "deprecated": false
       }
     },
-    "/conversations": {
+    "/api/v1/conversations": {
       "post": {
         "tags": [
           "conversations"
@@ -173,7 +161,7 @@
         ]
       }
     },
-    "/conversations/group": {
+    "/api/v1/conversations/group": {
       "post": {
         "tags": [
           "conversations"
@@ -230,7 +218,7 @@
         ]
       }
     },
-    "/conversations/{id}": {
+    "/api/v1/conversations/{id}": {
       "get": {
         "tags": [
           "conversations"
@@ -265,7 +253,7 @@
         ]
       }
     },
-    "/messages/conversation/{id}": {
+    "/api/v1/messages/conversation/{id}": {
       "post": {
         "tags": [
           "messages"
