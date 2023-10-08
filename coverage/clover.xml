@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1696720525817" clover="3.2.0">
-  <project timestamp="1696720525817" name="All files">
-    <metrics statements="347" coveredstatements="247" conditionals="46" coveredconditionals="22" methods="49" coveredmethods="32" elements="442" coveredelements="301" complexity="0" loc="347" ncloc="347" packages="9" files="28" classes="28"/>
+<coverage generated="1696736441280" clover="3.2.0">
+  <project timestamp="1696736441280" name="All files">
+    <metrics statements="348" coveredstatements="248" conditionals="46" coveredconditionals="22" methods="49" coveredmethods="32" elements="443" coveredelements="302" complexity="0" loc="348" ncloc="348" packages="9" files="28" classes="28"/>
     <package name="src">
       <metrics statements="28" coveredstatements="27" conditionals="10" coveredconditionals="10" methods="3" coveredmethods="2"/>
       <file name="app.js" path="C:\Users\USER\Desktop\CHAT-API\src\app.js">
@@ -260,7 +260,7 @@
       </file>
     </package>
     <package name="src.modules.conversations">
-      <metrics statements="41" coveredstatements="18" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
+      <metrics statements="42" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
       <file name="conversations.controllers.js" path="C:\Users\USER\Desktop\CHAT-API\src\modules\conversations\conversations.controllers.js">
         <metrics statements="28" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
@@ -301,15 +301,16 @@
         <line num="9" count="1" type="stmt"/>
         <line num="17" count="1" type="stmt"/>
         <line num="18" count="1" type="stmt"/>
-        <line num="20" count="1" type="stmt"/>
-        <line num="22" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
       </file>
       <file name="conversations.validators.js" path="C:\Users\USER\Desktop\CHAT-API\src\modules\conversations\conversations.validators.js">
-        <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="24" count="1" type="stmt"/>
+        <line num="22" count="1" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.messages">
@@ -347,7 +348,7 @@
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
-        <line num="18" count="1" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.modules.user">

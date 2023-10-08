@@ -82,3 +82,363 @@ res: status: 400, {"error":"Invalid data","message":["El firstname no debe estar
 req: POST /api/v1/users body: {"firstname":"","lastname":"","email":"edw@gmail.com","password":"Academlo123@"} 
 res: status: 400, {"error":"Invalid data","message":["El firstname no debe estar vacio","La longitud del nombre de ser entre 2 y 50 caracteres","El firstname solo acepta letras","El lastname no debe estar vacio","La longitud del apellido de ser entre 2 y 50 caracteres","El lastname solo acepta letras"]} 
 
+====================ERROR 7/10/2023, 19:54:03=========================
+req: GET /api/v1/users body: {} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 20:14:55=========================
+req: GET /api/v1/users body: {} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 20:15:50=========================
+req: POST /api/v1/users/login body: {"email":"lorena@gmail.com","password":"Academlo123@"} 
+res: status: 401, {"error":"Email verification needed","message":"Look at your email message for a verification email"} 
+
+====================ERROR 7/10/2023, 20:24:32=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$Nc6U4nmT23aKZnQn60bEEu5LQKZQtRcoNTHzyQNTV1Mjh7CkbaSme","2023-10-08 01:24:32.213 +00:00","2023-10-08 01:24:32.213 +00:00"]},"original":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$Nc6U4nmT23aKZnQn60bEEu5LQKZQtRcoNTHzyQNTV1Mjh7CkbaSme","2023-10-08 01:24:32.213 +00:00","2023-10-08 01:24:32.213 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 20:24:32=========================
+req: POST /api/v1/users body: {"firstname":"shalala","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname property is not included","The lastname must not be empty","The lastname value must be string","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:24:32=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$jA/yi9/94m9YudL/kWz9purg2Lb0WMa4n/zNpAZZ23TL4maz.gxsa","2023-10-08 01:24:32.510 +00:00","2023-10-08 01:24:32.510 +00:00"]},"original":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$jA/yi9/94m9YudL/kWz9purg2Lb0WMa4n/zNpAZZ23TL4maz.gxsa","2023-10-08 01:24:32.510 +00:00","2023-10-08 01:24:32.510 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 20:24:32=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname must not be empty","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:24:45=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$sXn6Bn.R8P2rtkEwTV1s7ugnMlEOo/thw16GSv0Ox6zOKkYdMSHza","2023-10-08 01:24:45.526 +00:00","2023-10-08 01:24:45.526 +00:00"]},"original":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$sXn6Bn.R8P2rtkEwTV1s7ugnMlEOo/thw16GSv0Ox6zOKkYdMSHza","2023-10-08 01:24:45.526 +00:00","2023-10-08 01:24:45.526 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 20:24:45=========================
+req: POST /api/v1/users body: {"firstname":"shalala","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname property is not included","The lastname must not be empty","The lastname value must be string","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:24:45=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$TIl3FBtIifLxqdsvcRf2/euHn5O/JsYiNiRaeXNvdmKPO.KCTRxRi","2023-10-08 01:24:45.822 +00:00","2023-10-08 01:24:45.822 +00:00"]},"original":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$TIl3FBtIifLxqdsvcRf2/euHn5O/JsYiNiRaeXNvdmKPO.KCTRxRi","2023-10-08 01:24:45.822 +00:00","2023-10-08 01:24:45.822 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 20:24:45=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname must not be empty","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:29:14=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$5l6KhfxhNgythRQiN0tOAO84.Wvd4Kq/cb9P14q/jtlML4Ny6ULwa","2023-10-08 01:29:14.306 +00:00","2023-10-08 01:29:14.306 +00:00"]},"original":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$5l6KhfxhNgythRQiN0tOAO84.Wvd4Kq/cb9P14q/jtlML4Ny6ULwa","2023-10-08 01:29:14.306 +00:00","2023-10-08 01:29:14.306 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 20:29:14=========================
+req: POST /api/v1/users body: {"firstname":"shalala","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname property is not included","The lastname must not be empty","The lastname value must be string","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:29:14=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$B9IgwGaa0Vqyze/YBFah5.Ee/3OmoATwtJ830fycnpSJMtHZZc/z6","2023-10-08 01:29:14.631 +00:00","2023-10-08 01:29:14.631 +00:00"]},"original":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$B9IgwGaa0Vqyze/YBFah5.Ee/3OmoATwtJ830fycnpSJMtHZZc/z6","2023-10-08 01:29:14.631 +00:00","2023-10-08 01:29:14.631 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 20:29:14=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname must not be empty","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:33:01=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$ncQTIv6xrEuSqNHj/6JzQe1AcGyXFZWofYONpYEqhvzOzSZ00wIsK","2023-10-08 01:33:00.770 +00:00","2023-10-08 01:33:00.770 +00:00"]},"original":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$ncQTIv6xrEuSqNHj/6JzQe1AcGyXFZWofYONpYEqhvzOzSZ00wIsK","2023-10-08 01:33:00.770 +00:00","2023-10-08 01:33:00.770 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 20:33:01=========================
+req: POST /api/v1/users body: {"firstname":"shalala","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname property is not included","The lastname must not be empty","The lastname value must be string","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:33:01=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$1NYBvQvixw5CPK8x2h2cleEpwrqCNHEnmtF0Mh0Lo2ZxrTFT73nia","2023-10-08 01:33:01.063 +00:00","2023-10-08 01:33:01.063 +00:00"]},"original":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$1NYBvQvixw5CPK8x2h2cleEpwrqCNHEnmtF0Mh0Lo2ZxrTFT73nia","2023-10-08 01:33:01.063 +00:00","2023-10-08 01:33:01.063 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 20:33:01=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname must not be empty","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:37:26=========================
+req: POST /api/v1/users body: {"firstname":"shalala","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname property is not included","The lastname must not be empty","The lastname value must be string","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:37:26=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname must not be empty","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:40:38=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$DkfW3UPU7WMLSOokwGAYfO8Fgfu6nUUhqojzqlFFyi9BNK4wdPl6G","2023-10-08 01:40:38.061 +00:00","2023-10-08 01:40:38.061 +00:00"]},"original":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$DkfW3UPU7WMLSOokwGAYfO8Fgfu6nUUhqojzqlFFyi9BNK4wdPl6G","2023-10-08 01:40:38.061 +00:00","2023-10-08 01:40:38.061 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 20:40:38=========================
+req: POST /api/v1/users body: {"firstname":"shalala","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname property is not included","The lastname must not be empty","The lastname value must be string","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:40:38=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$gGMzITSvd2U.bfKCuA1I5.0L91ugp.3pc8LZ4cn1XGdygrQHc9p96","2023-10-08 01:40:38.616 +00:00","2023-10-08 01:40:38.616 +00:00"]},"original":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$gGMzITSvd2U.bfKCuA1I5.0L91ugp.3pc8LZ4cn1XGdygrQHc9p96","2023-10-08 01:40:38.616 +00:00","2023-10-08 01:40:38.616 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname must not be empty","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:40:38=========================
+====================ERROR 7/10/2023, 20:41:31=========================
+req: POST /api/v1/users body: {"firstname":"shalala","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname property is not included","The lastname must not be empty","The lastname value must be string","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname must not be empty","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 20:41:32=========================
+====================ERROR 7/10/2023, 21:07:03=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Dejemos asi...","senderId":4} 
+res: status: 400, {"error":"Invalid data","message":["The content field is not included","The content field must not be empty","The content value must be string","The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:08:43=========================
+req: POST /api/v1/messages/conversation/29 body: {"content":"Que miedo...","senderId":6} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 21:10:13=========================
+req: POST /api/v1/messages/conversation/29 body: {"content":"Que miedo...","senderId":6} 
+res: status: 400, {"error":"Invalid data","message":["The content field is not included","The content field must not be empty","The content value must be string","The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:10:35=========================
+req: POST /api/v1/messages/conversation/29 body: {"content":"Que miedo........","senderId":6} 
+res: status: 400, {"error":"Invalid data","message":["The content field is not included","The content field must not be empty","The content value must be string","The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:18:35=========================
+req: GET /api/v1/messages/conversation/29 body: {} 
+res: status: 400, {"error":"Invalid data","message":["The content field is not included","The content field must not be empty","The content value must be string","The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:20:07=========================
+req: GET /api/v1/messages/conversation/29 body: {} 
+res: status: 400, {"error":"Invalid data","message":["The content field is not included","The content field must not be empty","The content value must be string","The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:21:22=========================
+req: GET /api/v1/messages/conversation/29 body: {} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-05T15:18:50.000Z"} 
+
+====================ERROR 7/10/2023, 21:22:06=========================
+req: GET /api/v1/messages/conversation/29 body: {} 
+res: status: 400, {"error":"Invalid data","message":["The content field is not included","The content field must not be empty","The content value must be string","The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:22:07=========================
+req: GET /api/v1/messages/conversation/29 body: {} 
+res: status: 400, {"error":"Invalid data","message":["The content field is not included","The content field must not be empty","The content value must be string","The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:22:23=========================
+req: GET /api/v1/messages/conversation/29 body: {} 
+res: status: 400, {"error":"Invalid data","message":["The content field is not included","The content field must not be empty","The content value must be string","The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:23:03=========================
+req: GET /api/v1/messages/conversation/29 body: {} 
+res: status: 400, {"error":"Invalid data","message":["The content field is not included","The content field must not be empty","The content value must be string","The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:23:08=========================
+req: GET /api/v1/messages/conversation/29 body: {} 
+res: status: 400, {"error":"Invalid data","message":["The content field is not included","The content field must not be empty","The content value must be string","The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:23:52=========================
+req: GET /api/v1/messages/conversation/29 body: {} 
+res: status: 400, {"error":"Invalid data","message":["The content field is not included","The content field must not be empty","The content value must be string","The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:26:14=========================
+req: POST /api/v1/conversations body: {"userId":4,"participantId":23} 
+res: status: 400, {"error":"Invalid data","message":["The title property is not included","The title value must not be empty","The title value must be string","Error in title field","The type property is not included","The type value must not be empty","The type value must be string"]} 
+
+====================ERROR 7/10/2023, 21:32:04=========================
+req: POST /api/v1/conversations/group body: {"userId":1,"participantsIds":[22,23],"title":"fieston"} 
+res: status: 400, {"error":"Invalid data","message":["Error in title field","The type property is not included","The type value must not be empty","The type value must be string"]} 
+
+====================ERROR 7/10/2023, 21:33:18=========================
+req: POST /api/v1/conversations/group body: {"userId":1,"participantsIds":[22,23],"title":"fieston"} 
+res: status: 400, {"error":"Invalid data","message":["Error in title field","The type property is not included","The type value must not be empty","The type value must be string"]} 
+
+====================ERROR 7/10/2023, 21:34:33=========================
+req: POST /api/v1/conversations/group body: {"userId":1,"participantsIds":[22,23],"title":"parangaricurimicuaro"} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 21:34:54=========================
+req: POST /api/v1/conversations/group body: {"userId":1,"participantsIds":[22,23],"title":"parangaricurimicuaro"} 
+res: status: 400, {"error":"Invalid data","message":["The type property is not included","The type value must not be empty","The type value must be string"]} 
+
+====================ERROR 7/10/2023, 21:36:20=========================
+req: POST /api/v1/conversations/group body: {"userId":2,"participantsIds":[22,23],"title":"generacion 27"} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 21:36:47=========================
+req: POST /api/v1/conversations/group body: {"userId":2,"participantsIds":[22,23],"title":"generacion 27"} 
+res: status: 400, {"error":"Invalid data","message":["The type property is not included","The type value must not be empty","The type value must be string"]} 
+
+====================ERROR 7/10/2023, 21:36:49=========================
+req: POST /api/v1/conversations/group body: {"userId":2,"participantsIds":[22,23],"title":"generacion 27"} 
+res: status: 400, {"error":"Invalid data","message":["The type property is not included","The type value must not be empty","The type value must be string"]} 
+
+====================ERROR 7/10/2023, 21:38:27=========================
+req: POST /api/v1/conversations/group body: {"userId":1,"participantsIds":[3,4,5],"title":"parangaricurimicuaro"} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 21:38:37=========================
+req: POST /api/v1/conversations/group body: {"userId":1,"participantsIds":[3,4,5],"title":"parangaricurimicuaro"} 
+res: status: 400, {"error":"Invalid data","message":["The type property is not included","The type value must not be empty","The type value must be string"]} 
+
+====================ERROR 7/10/2023, 21:48:17=========================
+req: GET /api/v1/conversations/6 body: {} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-05T16:38:47.000Z"} 
+
+====================ERROR 7/10/2023, 21:48:17=========================
+req: GET /api/v1/users body: {} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-05T16:38:47.000Z"} 
+
+req: GET /api/v1/users body: {} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-05T16:38:47.000Z"} 
+
+====================ERROR 7/10/2023, 21:48:17=========================
+req: GET /api/v1/conversations/6 body: {} 
+res: status: undefined, {"name":"TokenExpiredError","message":"jwt expired","expiredAt":"2023-10-05T16:38:47.000Z"} 
+
+====================ERROR 7/10/2023, 21:48:17=========================
+====================ERROR 7/10/2023, 21:49:17=========================
+req: POST /api/v1/messages/conversation/17 body: {"content":"jazziel","senderId":6} 
+res: status: 400, {"error":"Invalid data","message":["The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:49:20=========================
+req: POST /api/v1/messages/conversation/17 body: {"content":"jazziel","senderId":6} 
+res: status: 400, {"error":"Invalid data","message":["The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:51:08=========================
+req: POST /api/v1/messages/conversation/15 body: {"content":"jazziel","senderId":6} 
+res: status: 400, {"error":"Invalid data","message":["The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 21:54:40=========================
+req: POST /api/v1/conversations body: {"userId":3,"participantId":4} 
+res: status: 400, {"error":"Invalid data","message":["The title property is not included","The title value must not be empty","The title value must be string"]} 
+
+====================ERROR 7/10/2023, 21:54:43=========================
+req: POST /api/v1/conversations body: {"userId":3,"participantId":4} 
+res: status: 400, {"error":"Invalid data","message":["The title property is not included","The title value must not be empty","The title value must be string"]} 
+
+====================ERROR 7/10/2023, 21:57:47=========================
+req: GET /api/v1/users body: {} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 22:07:17=========================
+req: POST /api/v1/conversations/group body: {"userId":2,"participantsIds":[22,23],"title":"olala"} 
+res: status: 400, {"error":"Invalid data","message":["The user value must be numeric","The value of the participants must be an arrangement"]} 
+
+====================ERROR 7/10/2023, 22:08:06=========================
+req: POST /api/v1/conversations/group body: {"userId":2,"participantsIds":[22,23],"title":"olala"} 
+res: status: 400, {"error":"Invalid data","message":["The user value must be numeric","The value of the participants must be an arrangement"]} 
+
+====================ERROR 7/10/2023, 22:11:33=========================
+req: POST /api/v1/conversations body: {} 
+res: status: 400, {"expose":true,"statusCode":400,"body":"{\n  \"userId\": ,\n  \"participantId\": 4\n}","type":"entity.parse.failed"} 
+
+====================ERROR 7/10/2023, 22:12:53=========================
+req: POST /api/v1/conversations body: {} 
+res: status: 400, {"expose":true,"statusCode":400,"body":"{\n  \"userId\": aaaaa,\n  \"participantId\": 22\n}","type":"entity.parse.failed"} 
+
+====================ERROR 7/10/2023, 22:13:13=========================
+req: POST /api/v1/conversations body: {"userId":"SS","participantId":22} 
+res: status: 400, {"error":"Invalid data","message":["The user value must be numeric"]} 
+
+====================ERROR 7/10/2023, 22:19:56=========================
+req: POST /api/v1/users/login body: {"email":"nelidavillegas@gmail.com","password":"Academlo123@"} 
+res: status: 400, {"error":"Incorrect password","message":"The password does not match with the user"} 
+
+====================ERROR 7/10/2023, 22:20:10=========================
+req: POST /api/v1/users body: {"firstname":"Nelida","lastname":"Villegas","email":"nelidavillegas@gmail.com","password":"Academlo123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":218,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(nelidavillegas@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["Nelida","Villegas","nelidavillegas@gmail.com","$2b$10$VQ/A02Ak0fI1VzjlKwImge.AKYy/71bc544wD5dTow249HubnCmcq","2023-10-08 03:20:10.132 +00:00","2023-10-08 03:20:10.132 +00:00"]},"original":{"length":218,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(nelidavillegas@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["Nelida","Villegas","nelidavillegas@gmail.com","$2b$10$VQ/A02Ak0fI1VzjlKwImge.AKYy/71bc544wD5dTow249HubnCmcq","2023-10-08 03:20:10.132 +00:00","2023-10-08 03:20:10.132 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 22:20:30=========================
+req: POST /api/v1/users/login body: {"email":"nelidavillegas@gmail.com","password":"Academlo123@"} 
+res: status: 401, {"error":"Email verification needed","message":"Look at your email message for a verification email"} 
+
+====================ERROR 7/10/2023, 22:23:23=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia...","senderId":2} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia...",2,":id","2023-10-08 03:23:23.089 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia...",2,":id","2023-10-08 03:23:23.089 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia...",2,":id","2023-10-08 03:23:23.089 +00:00"]} 
+
+====================ERROR 7/10/2023, 22:23:50=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia","senderId":2} 
+res: status: 400, {"error":"Invalid data","message":["The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 22:24:07=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia..","senderId":2} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",2,":id","2023-10-08 03:24:07.378 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",2,":id","2023-10-08 03:24:07.378 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",2,":id","2023-10-08 03:24:07.378 +00:00"]} 
+
+====================ERROR 7/10/2023, 22:24:16=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia..","senderId":3} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",3,":id","2023-10-08 03:24:16.552 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",3,":id","2023-10-08 03:24:16.552 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",3,":id","2023-10-08 03:24:16.552 +00:00"]} 
+
+====================ERROR 7/10/2023, 22:24:17=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia..","senderId":3} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",3,":id","2023-10-08 03:24:17.602 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",3,":id","2023-10-08 03:24:17.602 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",3,":id","2023-10-08 03:24:17.602 +00:00"]} 
+
+====================ERROR 7/10/2023, 22:24:20=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia..","senderId":4} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:24:20.873 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:24:20.873 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:24:20.873 +00:00"]} 
+
+====================ERROR 7/10/2023, 22:24:53=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia..","senderId":4} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:24:53.394 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:24:53.394 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:24:53.394 +00:00"]} 
+
+====================ERROR 7/10/2023, 22:25:10=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia..","senderId":4} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:25:10.849 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:25:10.849 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:25:10.849 +00:00"]} 
+
+====================ERROR 7/10/2023, 22:25:12=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia..","senderId":4} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:25:12.398 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:25:12.398 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:25:12.398 +00:00"]} 
+
+====================ERROR 7/10/2023, 22:26:00=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia..","senderId":4} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:26:00.474 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:26:00.474 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:26:00.474 +00:00"]} 
+
+====================ERROR 7/10/2023, 22:26:01=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia..","senderId":4} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:26:01.618 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:26:01.618 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:26:01.618 +00:00"]} 
+
+====================ERROR 7/10/2023, 22:31:37=========================
+req: POST /api/v1/messages/conversation/29 body: {"content":"XD...","senderId":6} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 22:32:04=========================
+req: POST /api/v1/messages/conversation/:id body: {"content":"Buen dia..","senderId":4} 
+res: status: undefined, {"name":"SequelizeDatabaseError","parent":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:32:04.281 +00:00"]},"original":{"length":164,"name":"error","severity":"ERROR","code":"22P02","where":"portal sin nombre, parámetro 3 = '...'","file":"numutils.c","line":"235","routine":"pg_strtoint32","sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:32:04.281 +00:00"]},"sql":"INSERT INTO \"Messages\" (\"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\") VALUES (DEFAULT,$1,$2,$3,$4) RETURNING \"id\",\"content\",\"senderId\",\"conversationId\",\"createdAt\";","parameters":["Buen dia..",4,":id","2023-10-08 03:32:04.281 +00:00"]} 
+
+====================ERROR 7/10/2023, 22:32:27=========================
+req: POST /api/v1/messages/conversation/29 body: {"content":"XD...","senderId":6} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 22:32:30=========================
+req: POST /api/v1/messages/conversation/29 body: {"content":"XD...","senderId":6} 
+res: status: 401, {"message":"No authorization header"} 
+
+====================ERROR 7/10/2023, 22:32:41=========================
+req: POST /api/v1/messages/conversation/29 body: {"content":"XD...","senderId":6} 
+res: status: 400, {"error":"Invalid data","message":["The length of the name must be between 10 and 50 characters"]} 
+
+====================ERROR 7/10/2023, 22:40:10=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$jyKSVxb/EpEh8rmyN4hLXeovo6RANo56pO1jO9PVWGzw93B9Bfcnq","2023-10-08 03:40:09.809 +00:00","2023-10-08 03:40:09.809 +00:00"]},"original":{"length":213,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala@gmail.com).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala@gmail.com","$2b$10$jyKSVxb/EpEh8rmyN4hLXeovo6RANo56pO1jO9PVWGzw93B9Bfcnq","2023-10-08 03:40:09.809 +00:00","2023-10-08 03:40:09.809 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 22:40:10=========================
+req: POST /api/v1/users body: {"firstname":"shalala","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname property is not included","The lastname must not be empty","The lastname value must be string","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 22:40:10=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"shalalal","email":"shalalala","password":"Shalala123@"} 
+res: status: undefined, {"name":"SequelizeUniqueConstraintError","errors":[],"parent":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$o95K3KsTnaaMuQeAum4DUub1vfObU5YRMY5/Lsbx2znsrCERw.kju","2023-10-08 03:40:10.100 +00:00","2023-10-08 03:40:10.100 +00:00"]},"original":{"length":203,"name":"error","severity":"ERROR","code":"23505","detail":"Ya existe la llave (email)=(shalalala).","schema":"public","table":"Users","constraint":"Users_email_key","file":"nbtinsert.c","line":"671","routine":"_bt_check_unique","sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";","parameters":["shalala","shalalal","shalalala","$2b$10$o95K3KsTnaaMuQeAum4DUub1vfObU5YRMY5/Lsbx2znsrCERw.kju","2023-10-08 03:40:10.100 +00:00","2023-10-08 03:40:10.100 +00:00"]},"fields":{},"sql":"INSERT INTO \"Users\" (\"id\",\"firstname\",\"lastname\",\"email\",\"password\",\"createdAt\",\"updatedAt\") VALUES (DEFAULT,$1,$2,$3,$4,$5,$6) RETURNING \"id\",\"firstname\",\"lastname\",\"email\",\"avatar\",\"password\",\"description\",\"validEmail\",\"createdAt\",\"updatedAt\";"} 
+
+====================ERROR 7/10/2023, 22:40:10=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname must not be empty","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 22:40:40=========================
+req: POST /api/v1/users body: {"firstname":"shalala","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname property is not included","The lastname must not be empty","The lastname value must be string","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+
+====================ERROR 7/10/2023, 22:40:40=========================
+req: POST /api/v1/users body: {"firstname":"shalala","lastname":"","email":"shalalala@gmail.com","password":"Shalala123@"} 
+res: status: 400, {"error":"Invalid data","message":["The lastname must not be empty","The length of the last name to be between 2 and 50 characters","The lastname only accepts letters"]} 
+

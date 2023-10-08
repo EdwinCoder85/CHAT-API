@@ -12,6 +12,6 @@ const router = Router();
 router
   .route("/conversation/:id")
   .post(authenticate, messageValidator, createConversationMessage)
-  .get(authenticate, messageValidator, getConversationMessages);
+  .get(authenticate, getConversationMessages);
 
 module.exports = router;
